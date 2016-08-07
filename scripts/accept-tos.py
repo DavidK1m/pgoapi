@@ -22,4 +22,8 @@ def accept_tos(username, password):
 	print('Accepted Terms of Service for {}'.format(username))
 	#print('Response dictionary: \r\n{}'.format(pprint.PrettyPrinter(indent=4).pformat(response)))
 
-accept_tos('username', 'password')
+with open('accounts.txt') as f:
+	accounts = [x.strip().split(':') for x in f.readlines()]
+
+for username,password in accountss:
+	accept_tos(username, password)
